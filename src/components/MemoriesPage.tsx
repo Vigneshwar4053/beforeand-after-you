@@ -15,22 +15,21 @@ const memories: Memory[] = [
     id: 1,
     title: "Our First Date",
     description: "That nervous excitement when we first met... your smile made everything perfect.",
-   <img src="/1.jpg" alt="Image 1" />
-,
+    imageUrl: "/src/assets/2.jpg",
     color: "text-love-pink"
   },
   {
     id: 2,
     title: "That Crazy Rain Walk",
     description: "Dancing in the rain together, laughing until our sides hurt. Pure magic.",
-    <img src="/2.jpg" alt="Image 1" />,
+    imageUrl: "/src/assets/1.jpg",
     color: "text-soft-blue"
   },
   {
     id: 3,
     title: "Your Smile That Day",
     description: "The moment I knew I was completely, hopelessly in love with you.",
-    <img src="/3.jpg" alt="Image 1" />,
+    imageUrl: "/src/assets/3.jpg",
     color: "text-sunset-orange"
   },
 ];
