@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Romantic Anime Love Story Design System
+All colors MUST be HSL. Pastel romantic theme with dreamy animations.
+*/
+
+@layer base {
+  :root {
+    /* Romantic pastel color palette */
+    --background: 340 100% 98%;
+    --foreground: 340 15% 25%;
+
+    --card: 340 50% 96%;
+    --card-foreground: 340 15% 25%;
+
+    --popover: 340 100% 98%;
+    --popover-foreground: 340 15% 25%;
+
+    --primary: 340 82% 52%;
+    --primary-foreground: 340 100% 98%;
+
+    --secondary: 200 100% 90%;
+    --secondary-foreground: 200 15% 25%;
+
+    --muted: 340 30% 94%;
+    --muted-foreground: 340 10% 55%;
+
+    --accent: 280 100% 90%;
+    --accent-foreground: 280 15% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 340 30% 88%;
+    --input: 340 30% 92%;
+    --ring: 340 82% 52%;
+
+    /* Romantic design elements */
+    --love-pink: 340 82% 52%;
+    --soft-blue: 200 100% 85%;
+    --sunset-orange: 20 100% 80%;
+    --dreamy-purple: 280 100% 85%;
+    --gentle-yellow: 45 100% 88%;
+    --cloud-white: 340 100% 98%;
+    
+    /* Gradients */
+    --gradient-sunset: linear-gradient(135deg, hsl(340 82% 52%) 0%, hsl(20 100% 80%) 50%, hsl(280 100% 85%) 100%);
+    --gradient-sky: linear-gradient(180deg, hsl(200 100% 90%) 0%, hsl(280 100% 90%) 100%);
+    --gradient-love: linear-gradient(45deg, hsl(340 82% 52%) 0%, hsl(280 100% 85%) 100%);
+    
+    /* Shadows */
+    --shadow-romantic: 0 10px 30px -10px hsl(340 82% 52% / 0.3);
+    --shadow-dreamy: 0 20px 40px -15px hsl(280 100% 85% / 0.4);
+    --shadow-soft: 0 4px 20px hsl(340 30% 88% / 0.3);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+}
+
+@layer components {
+  /* Romantic animations */
+  .falling-petals {
+    position: fixed;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background: hsl(340 82% 52%);
+    border-radius: 50% 0 50% 50%;
+    animation: fall 8s linear infinite;
+    opacity: 0.7;
+  }
+  
+  .falling-petals:nth-child(2n) {
+    background: hsl(280 100% 85%);
+    animation-duration: 6s;
+    animation-delay: 2s;
+  }
+  
+  .falling-petals:nth-child(3n) {
+    background: hsl(200 100% 85%);
+    animation-duration: 10s;
+    animation-delay: 4s;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-100vh) rotate(0deg);
+      left: calc(var(--position) * 1%);
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      left: calc((var(--position) + 10) * 1%);
+    }
+  }
+
+  .typewriter {
+    overflow: hidden;
+    border-right: 2px solid hsl(340 82% 52%);
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(340 82% 52%); }
+  }
+
+  .heart-beat {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+  }
+
+  @keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.1); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.1); }
+    70% { transform: scale(1); }
+  }
+
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: hsl(45 100% 88%);
+    border-radius: 50%;
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  .love-glow {
+    box-shadow: 0 0 30px hsl(340 82% 52% / 0.5);
+  }
+
+  .story-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .character-container {
+    position: relative;
+    max-width: 400px;
+    margin: 2rem auto;
+  }
+
+  .story-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: hsl(340 50% 96% / 0.8);
+    border-radius: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-soft);
+  }
+}
