@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { Heart, Camera, MapPin, Calendar, Star } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import img1 from '@/public/1.jpg';
+import img2 from '@/public/2.jpg';
+import img3 from '@/public/3.jpg';
+
 
 interface Memory {
   id: number;
@@ -15,21 +19,21 @@ const memories: Memory[] = [
     id: 1,
     title: "Our First Date",
     description: "That nervous excitement when we first met... your smile made everything perfect.",
-    imageUrl: "/src/assets/2.jpg",
+    imageUrl: "2.jpg",
     color: "text-love-pink"
   },
   {
     id: 2,
     title: "That Crazy Rain Walk",
     description: "Dancing in the rain together, laughing until our sides hurt. Pure magic.",
-    imageUrl: "/src/assets/1.jpg",
+    imageUrl: "1.jpg",
     color: "text-soft-blue"
   },
   {
     id: 3,
     title: "Your Smile That Day",
     description: "The moment I knew I was completely, hopelessly in love with you.",
-    imageUrl: "/src/assets/3.jpg",
+    imageUrl: "3.jpg",
     color: "text-sunset-orange"
   },
 ];
